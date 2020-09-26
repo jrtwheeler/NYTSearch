@@ -4,12 +4,19 @@ var recordTerm = $("#recordTerm");
 var startYear = $("#startYear");
 var endYear = $("#endYear");
 var searchReturn = $("#search-results");
-var searchTermOutput;
+var searchButton = $(".search");
+var clearButton = $(".clear");
 
 //Gather the values of the user input
 //return them so they are part of the url query
 //on click, run the search using the term's we gathered
-$(".search").on("click", function () {
+searchButton.on("click", queryNYT);
+//on click, clear the page
+clearButton.on("click", function(){
+  location.reload();
+});
+//
+function queryNYT() {
   saveLocal("mySearch", searchTerm.val());
   var searchTermOutput = getLocal("mySearch");
 
@@ -36,26 +43,30 @@ $(".search").on("click", function () {
   }).then(function (response) {
     //Return the results in an object
     var result = response.response;
-    //traverse the object
-    
-    //searchTerm
-    searchTerm.val();
     //create containers for the returned search results
     for (var i = 0; i < result.docs.length; i++) {
       console.log(result.docs[i].headline.main);
-      var searchResultDiv = $("<div>");
-      searchResultDiv.addClass("col-12 card mt-3 mb-5");
-      searchResultDiv.text(JSON.stringify(result.docs[i].headline.main));
-      searchReturn.append(searchResultDiv);
+      var ResultDiv = $("<div>");
+      var headlineCSS = $("<h4>")
+        .addClass("col-12 card mt-3 mb-5")
+        .text(JSON.stringify(result.docs[i].headline.main));
+
+      var urlCSS = $("<a>")
+        .addClass("col-12 card mt-3 mb-5")
+        .attr("href", result.docs[i].web_url)
+        .text(JSON.stringify(result.docs[i].web_url));
+
+      searchReturn.append(ResultDiv);
+      ResultDiv.append(headlineCSS);
+      ResultDiv.append(urlCSS);
     }
   });
-  // }
+}
 
-  function saveLocal(key, search) {
-    localStorage.setItem(key, JSON.stringify(search));
-  }
+function saveLocal(key, search) {
+  localStorage.setItem(key, JSON.stringify(search));
+}
 
-  function getLocal(key) {
-    return JSON.parse(localStorage.getItem(key)) || {};
-  }
-});
+function getLocal(key) {
+  return JSON.parse(localStorage.getItem(key)) || {};
+}
