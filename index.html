@@ -21,24 +21,24 @@
             </header>
             <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Search Term:</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=>
+              <label>Search Term:</label>
+              <input type="term" class="form-control" id="searchTerm" aria-describedby="emailHelp" placeholder=>
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Number of Records to Retrieve:</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="5">
+              <label>Number of Records to Retrieve:</label>
+              <input type="records" class="form-control" id="recordTerm" placeholder="5">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Start Year (Optional):</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label>Start Year (Optional):</label>
+                <input type="start_year" class="form-control" id="startYear">
               </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">End of Year (Optional):</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label>End of Year (Optional):</label>
+                <input type="end_year" class="form-control" id="endYear">
             </div>
-            <div class="form-group">
-                <button type="button" class="btn btn-sm"><i class="fas fa-search-location"></i> Search</button>
-                <button type="button" class="btn btn-sm"><i class="fas fa-trash"></i> Clear</button>
+            <div class="button-group">
+                <button type="button" class="btn btn-sm search"><i class="fas fa-search-location"></i> Search</button>
+                <button type="button" class="btn btn-sm clear"><i class="fas fa-trash"></i> Clear</button>
             </div>
             </form>
         </article>
@@ -50,9 +50,7 @@
             <header class = "header"><i class="fas fa-newspaper"> Top Articles</i>
             </header>
             <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1"></label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=>
+            <div class="form-group" id="search-results">
             </div>
         </article>
     </section>
