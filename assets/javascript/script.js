@@ -12,7 +12,7 @@ var clearButton = $(".clear");
 //on click, run the search using the term's we gathered
 searchButton.on("click", queryNYT);
 //on click, clear the page
-clearButton.on("click", function(){
+clearButton.on("click", function () {
   location.reload();
 });
 //
@@ -43,21 +43,24 @@ function queryNYT() {
   }).then(function (response) {
     //Return the results in an object
     var result = response.response;
+    console.log(result);
     //create containers for the returned search results
     for (var i = 0; i < result.docs.length; i++) {
       console.log(result.docs[i].headline.main);
-      var ResultDiv = $("<div>");
-      var headlineCSS = $("<h4>")
-        .addClass("col-12 card mt-3 mb-5")
+      var ResultDiv = $("<header>").addClass("col-12 card mt-3 mb-3")
+      var headlineCSS = $("<h5>")
         .text(JSON.stringify(result.docs[i].headline.main));
 
+      var snippetDiv = $("<p>")
+        .text(JSON.stringify(result.docs[i].snippet));
+
       var urlCSS = $("<a>")
-        .addClass("col-12 card mt-3 mb-5")
         .attr("href", result.docs[i].web_url)
         .text(JSON.stringify(result.docs[i].web_url));
 
       searchReturn.append(ResultDiv);
       ResultDiv.append(headlineCSS);
+      ResultDiv.append(snippetDiv);
       ResultDiv.append(urlCSS);
     }
   });
