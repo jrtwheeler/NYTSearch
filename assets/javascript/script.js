@@ -45,7 +45,7 @@ function queryNYT() {
     var result = response.response;
     console.log(result);
     //create containers for the returned search results
-    for (var i = 0; i < result.docs.length; i++) {
+    for (var i = 0; i < recordTerm.val(); i++) {
       console.log(result.docs[i].headline.main);
       var ResultDiv = $("<header>").addClass("col-12 card mt-3 mb-3")
       var headlineCSS = $("<h5>")
