@@ -54,8 +54,6 @@ function queryNYT() {
       var snippetDiv = $("<p>")
         .text(JSON.stringify(result.docs[i].snippet));
 
-      var urlButton = $("<button")
-
       var urlCSS = $("<a>")
         .attr("href", result.docs[i].web_url)
         .text(JSON.stringify(result.docs[i].web_url));
@@ -64,7 +62,6 @@ function queryNYT() {
       ResultDiv.append(headlineCSS);
       ResultDiv.append(snippetDiv);
       ResultDiv.append(urlCSS);
-      // urlButton.append(urlCSS)
     }
   });
 }

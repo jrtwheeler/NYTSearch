@@ -1,85 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>NYT Archive Search</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-    <div class="jumbotron col-12 margin-1">
+    <div class="jumbotron col-12 margin-1">        
         <h1 class="display-4 text-center font-weight-bolder text-white"><i class="fas fa-newspaper"></i>
             New York Times Search</h1>
-    </div>
-    <main class="container">
-        <section class="row">
-            <article class="col-12 card no-gutters border-bottom border-black pb-2 mb-0">
-                <header class="header">
-                    <h4><i class="fas fa-newspaper"> Search Parameters</i></h4>
-                </header>
-                <form>
-                    <div class="form-group">
-                        <label>Search Term:</label>
-                        <input type="term" class="form-control" id="searchTerm" aria-describedby="emailHelp"
-                            placeholder=>
-                    </div>
-                    <div class="form-group">
-                        <label for="RecordControlSelect">Total Records</label>
-                        <select class="form-control" id="recordTerm">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Start Year (Optional):</label>
-                        <input type="start_year" class="form-control" id="startYear">
-                    </div>
-                    <div class="form-group">
-                        <label>End of Year (Optional):</label>
-                        <input type="end_year" class="form-control" id="endYear">
-                    </div>
-                    <div class="button-group">
-                        <button type="button" class="btn btn-sm search"><i class="fas fa-search-location"></i>
-                            Search</button>
-                        <button type="button" class="btn btn-sm clear"><i class="fas fa-trash"></i> Clear</button>
-                    </div>
-                </form>
-            </article>
-        </section>
+      </div>
+  <main class="container">
+    <section class="row">
+        <article class="col-12 card no-gutters border-bottom border-black pb-2 mb-0">
+            <header class = "header"><h4><i class="fas fa-newspaper"> Search Parameters</i></h4>
+            </header>
+            <form>
+            <div class="form-group">
+              <label>Search Term:</label>
+              <input type="term" class="form-control" id="searchTerm" aria-describedby="emailHelp" placeholder=>
+            </div>
+            <div class="form-group">
+                <label for="RecordControlSelect">Total Records</label>
+                <select class="form-control" id="recordTerm">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                </select>
+              </div>
+            <div class="form-group">
+                <label>Start Year (Optional):</label>
+                <input type="start_year" class="form-control" id="startYear">
+              </div>
+            <div class="form-group">
+                <label>End of Year (Optional):</label>
+                <input type="end_year" class="form-control" id="endYear">
+            </div>
+            <div class="button-group">
+                <button type="button" class="btn btn-sm search"><i class="fas fa-search-location"></i> Search</button>
+                <button type="button" class="btn btn-sm clear"><i class="fas fa-trash"></i> Clear</button>
+            </div>
+            </form>
+        </article>
+    </section>
+  
 
-
-        <section class="row">
-            <article class="col-12 card mt-3 mb-5">
-                <header class="header">
-                    <h4><i class="fas fa-newspaper"> Top Articles</i></h4>
-                </header>
-                <form>
-                    <div class="form-group" id="search-results">
-                    </div>
-            </article>
-        </section>
-
-    </main>
-    <div class="card-footer text-muted text-center">
-        <p>
-            <img src="assets/images/poweredby_nytimes_200b.png" alt="Data provided by The New York Times">
-        </p>
-        </footer>
-    </div>
+    <section class="row">
+        <article class="col-12 card mt-3 mb-5">
+            <header class = "header"><h4><i class="fas fa-newspaper"> Top Articles</i></h4>
+            </header>
+            <form>
+            <div class="form-group" id="search-results">
+            </div>
+        </article>
+    </section>
+</main>
+<footer class="card-footer text-muted text-center">
+    <p>
+        <img src="assets/images/poweredby_nytimes_200b.png" alt="Data provided by The New York Times">
+    </p>
+</footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -92,5 +83,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="assets/javascript/script.js"></script>
 </body>
-
 </html>
+
